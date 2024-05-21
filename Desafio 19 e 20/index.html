@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eleição</title>
+<style>
+    body {
+        font-family: Helvetica, sans-serif;
+        padding: 20px;
+    }
+    .container {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    button {
+        margin: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    #mensagem {
+        font-weight: 600;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Eleição</h2>
+    <p>Escolha uma opção de voto:</p>
+    <button onclick="votar('Front-End', '#FF5733')">Front-End</button>
+    <button onclick="votar('Back-End', '#33FF57')">Back-End</button>
+    <button onclick="votar('Full Stack', '#5733FF')">Full Stack</button>
+    <button onclick="votar('UX/UI Design', '#FFFF33')">UX/UI Design</button>
+    <button onclick="votar('Nulo/Branco', '#CCCCCC')">Nulo/Branco</button>
+    
+    <p id="mensagem"></p>
+
+    <button onclick="votar('Corrigir/Resetar', '#fff')">Corrigir/Resetar</button>
+
+    <p>Escolha a cor de fundo:</p>
+    <input type="color" id="corFundo">
+    <button onclick="mudarCor()">Mudar Cor de Fundo</button>
+
+</div>
+
+<script>
+
+    function votar(opcao) {
+        document.getElementById('mensagem').innerText = 'Você votou em: ' + opcao;
+    }
+
+    function votar(opcao, cor) {
+        document.body.style.backgroundColor = cor;
+        document.getElementById('mensagem').innerText = 'Você votou em: ' + opcao;
+    }
+
+    function mudarCor() {
+        var cor = document.getElementById('corFundo').value;
+        document.body.style.backgroundColor = cor;
+    }
+</script>
+
+</body>
+</html>
